@@ -114,7 +114,7 @@ This allows demonstration of a **complete payment workflow without real transact
 
 
 # Project Structure
-
+'''
 smarter-blinkit
 │
 ├── backend
@@ -165,7 +165,7 @@ smarter-blinkit
 │   └── products.json
 │
 └── README.md
-
+'''
 # Architecture Approach
 
 The project follows a simplified **MVC architecture** to keep the system modular and scalable.
