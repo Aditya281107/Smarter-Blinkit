@@ -166,8 +166,6 @@ smarter-blinkit
 │
 └── README.md
 
-
-
 # Architecture Approach
 
 The project follows a simplified **MVC architecture** to keep the system modular and scalable.
