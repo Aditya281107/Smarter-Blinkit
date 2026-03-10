@@ -1,28 +1,39 @@
-console.log("SERVER FILE IS RUNNING");
-console.log(process.env.MONGO_URI);
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
 
-const authRoutes = require("./routes/authroutes");
-const productRoutes = require("./routes/productroutes");
+const authRoutes = require("./routes/authRoutes");
+const productRoutes = require("./routes/productRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 
 const app = express();
 
+/* Middlewares */
 app.use(cors());
 app.use(express.json());
 
+/* Debug check */
+console.log("Mongo URI:", process.env.MONGO_URI);
+
+/* MongoDB Connection */
 mongoose.connect(process.env.MONGO_URI)
-.then(()=>console.log("MongoDB Connected"))
-.catch(err=>console.log(err));
+.then(() => {
 
-app.use("/api/auth", authRoutes);
-app.use("/api/products", productRoutes);
-app.use("/api/payment", paymentRoutes);
+    console.log("MongoDB Connected");
 
-app.listen(5000,()=>{
-   
-    
+    /* Routes */
+    app.use("/api/auth", authRoutes);
+    app.use("/api/products", productRoutes);
+    app.use("/api/payment", paymentRoutes);
+
+    /* Start Server */
+    app.listen(5000, () => {
+        console.log("Server running on port 5000");
+    });
+
+})
+.catch((err) => {
+    console.log("MongoDB Connection Error:", err);
 });
