@@ -1,3 +1,5 @@
+console.log("SERVER FILE IS RUNNING");
+console.log(process.env.MONGO_URI);
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -21,5 +23,6 @@ app.use("/api/products", productRoutes);
 app.use("/api/payment", paymentRoutes);
 
 app.listen(5000,()=>{
-    console.log("Server running on port 5000");
+   
+    
 });
