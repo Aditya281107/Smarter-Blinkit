@@ -158,9 +158,6 @@ smarter-blinkit
 │   ├── App.jsx
 │   └── index.js
 │
-├── sample-data
-│   └── products.json
-│
 └── README.md
 ```
 # Architecture Approach
