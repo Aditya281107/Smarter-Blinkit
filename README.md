@@ -102,10 +102,6 @@ This allows demonstration of a **complete payment workflow without real transact
 
 * MongoDB
 
-**Authentication**
-
-* JSON Web Tokens (JWT)
-
 **Additional Tools**
 
 * Barcode scanning library
